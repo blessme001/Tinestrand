@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinestrand Hair - Premium Hair Extensions & Wigs | Lagos</title>
+    <title>Tinestrand Hair - Premium Hair Extensions & Wigs | Canada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,14 +13,15 @@
         }
 
         :root {
-            --primary-black: #0a0a0a;
-            --secondary-black: #1a1a1a;
-            --gold: #d4af37;
-            --light-gold: #e8c547;
+            --primary-pink: #ff6b9d;
+            --dark-pink: #d4466c;
+            --light-pink: #ffe0e8;
+            --blush-pink: #ffd4e5;
             --white: #ffffff;
-            --light-gray: #f5f5f5;
-            --text-gray: #333333;
-            --accent-beige: #f0e6d2;
+            --black: #1a1a1a;
+            --cream: #faf8f6;
+            --text-dark: #2a2a2a;
+            --accent-rose: #f0b4c7;
         }
 
         html {
@@ -27,11 +29,117 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-gray);
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text-dark);
             background-color: var(--white);
-            line-height: 1.6;
+            line-height: 1.8;
             overflow-x: hidden;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== ANIMATION LIBRARY ===== */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(255, 107, 157, 0.6);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0);
+            }
         }
 
         /* ===== NAVIGATION ===== */
@@ -39,50 +147,57 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid var(--gold);
+            border-bottom: 2px solid var(--light-pink);
+            box-shadow: 0 8px 32px rgba(255, 107, 157, 0.1);
+            animation: fadeInDown 0.8s ease;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 2px;
+            color: var(--primary-pink);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--white);
+            color: var(--text-dark);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.5px;
         }
 
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--primary-pink);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -8px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gold);
-            transition: width 0.3s ease;
+            background: linear-gradient(90deg, var(--primary-pink), var(--dark-pink));
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .nav-links a:hover::after {
@@ -90,22 +205,24 @@
         }
 
         .whatsapp-btn-nav {
-            background: var(--gold);
-            color: var(--primary-black);
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
+            background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border: none;
             cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.2);
         }
 
         .whatsapp-btn-nav:hover {
-            background: var(--light-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.35);
         }
 
         @media (max-width: 768px) {
@@ -114,7 +231,7 @@
             }
 
             .logo {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
 
             .nav-links {
@@ -122,75 +239,79 @@
             }
 
             .whatsapp-btn-nav {
-                padding: 0.5rem 1rem;
-                font-size: 0.75rem;
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
             }
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
-            background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 100%);
-            color: var(--white);
-            padding: 8rem 2rem 6rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--blush-pink) 100%);
+            color: var(--black);
+            padding: 10rem 2rem 8rem;
             text-align: center;
             position: relative;
             overflow: hidden;
-            margin-top: 60px;
+            margin-top: 70px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            top: -40%;
+            right: -15%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(255, 107, 157, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-30px); }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(240, 180, 199, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite reverse;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 700px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
             margin-bottom: 1rem;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, var(--gold), var(--light-gold));
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--dark-pink), var(--primary-pink), var(--dark-pink));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: fadeInUp 1s ease 0.1s both;
+            text-transform: uppercase;
+            line-height: 1.1;
         }
 
         .hero .tagline {
-            font-size: 1.3rem;
-            color: var(--light-gold);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            letter-spacing: 0.5px;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 0.2s both;
+            font-style: italic;
         }
 
         .hero-buttons {
@@ -198,55 +319,62 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.3s both;
         }
 
         .btn-primary, .btn-secondary {
-            padding: 1rem 2rem;
-            font-size: 1rem;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.05rem;
             border: none;
-            border-radius: 4px;
+            border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 600;
             display: inline-block;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .btn-primary {
-            background: var(--gold);
-            color: var(--primary-black);
+            background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+            color: var(--white);
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.25);
         }
 
         .btn-primary:hover {
-            background: var(--light-gold);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(255, 107, 157, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
+            color: var(--primary-pink);
+            border: 2.5px solid var(--primary-pink);
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.1);
         }
 
         .btn-secondary:hover {
-            background: var(--gold);
-            color: var(--primary-black);
-            transform: translateY(-3px);
+            background: var(--light-pink);
+            color: var(--dark-pink);
+            border-color: var(--dark-pink);
+            transform: translateY(-5px);
         }
 
         @media (max-width: 768px) {
             .hero {
-                padding: 6rem 1.5rem 4rem;
-                margin-top: 50px;
+                padding: 8rem 1.5rem 5rem;
+                margin-top: 60px;
+                min-height: auto;
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.8rem;
             }
 
             .hero .tagline {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             .hero-buttons {
@@ -254,76 +382,89 @@
             }
 
             .btn-primary, .btn-secondary {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
+                padding: 0.95rem 2rem;
+                font-size: 0.95rem;
             }
         }
 
         /* ===== PRODUCT SHOWCASE ===== */
         .products {
-            padding: 6rem 2rem;
-            background: var(--light-gray);
+            padding: 8rem 2rem;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .products::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--light-pink), transparent);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 4rem;
-            color: var(--primary-black);
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 5rem;
+            color: var(--text-dark);
             position: relative;
+            animation: fadeInDown 1s ease;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--gold);
-            margin: 1rem auto 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--dark-pink));
+            margin: 1.5rem auto 0;
+            border-radius: 2px;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .product-card {
             background: var(--white);
-            border-radius: 8px;
+            border-radius: 20px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            animation: slideUp 0.6s ease;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+            animation: slideUp 0.8s ease both;
+            position: relative;
+            border: 1px solid rgba(255, 107, 157, 0.1);
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 28px rgba(212, 175, 55, 0.15);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(255, 107, 157, 0.2);
         }
 
         .product-image {
             width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, var(--secondary-black), var(--primary-black));
+            height: 320px;
+            background: linear-gradient(135deg, var(--blush-pink), var(--light-pink));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: var(--gold);
+            font-size: 5rem;
             position: relative;
             overflow: hidden;
         }
@@ -335,212 +476,277 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             animation: shimmer 3s infinite;
         }
 
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        .product-card:hover .product-image {
+            animation: scaleIn 0.4s ease;
         }
 
         .product-info {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .product-name {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
-            color: var(--primary-black);
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
         }
 
         .product-price {
-            font-size: 1.3rem;
-            color: var(--gold);
+            font-size: 1.4rem;
+            color: var(--primary-pink);
             font-weight: 700;
             margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .product-description {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
         .product-card .btn-primary {
             width: 100%;
-            padding: 0.8rem;
+            padding: 1rem;
+            margin: 0;
         }
 
         @media (max-width: 768px) {
             .products {
-                padding: 4rem 1.5rem;
+                padding: 5rem 1.5rem;
             }
 
             .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
+                font-size: 2.2rem;
+                margin-bottom: 3rem;
             }
 
             .product-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
 
             .product-image {
-                height: 220px;
-                font-size: 3rem;
+                height: 240px;
+                font-size: 3.5rem;
             }
         }
 
         /* ===== ABOUT SECTION ===== */
         .about {
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
             background: var(--white);
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
+            position: relative;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
         }
 
+        .about-text {
+            animation: fadeInLeft 1s ease;
+        }
+
         .about-text h2 {
-            font-size: 2.2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
-            color: var(--primary-black);
+            color: var(--text-dark);
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .about-text p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #555;
-            margin-bottom: 1rem;
-            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-weight: 300;
         }
 
         .about-highlights {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
 
         .highlight {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             align-items: flex-start;
+            animation: fadeInUp 0.8s ease both;
         }
 
+        .highlight:nth-child(1) { animation-delay: 0.2s; }
+        .highlight:nth-child(2) { animation-delay: 0.3s; }
+        .highlight:nth-child(3) { animation-delay: 0.4s; }
+        .highlight:nth-child(4) { animation-delay: 0.5s; }
+
         .highlight-icon {
-            color: var(--gold);
-            font-size: 1.5rem;
+            color: var(--primary-pink);
+            font-size: 1.8rem;
             flex-shrink: 0;
-            margin-top: 2px;
+            margin-top: 4px;
         }
 
         .highlight-text {
             color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .highlight-text strong {
-            color: var(--primary-black);
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         .about-image {
             width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, var(--secondary-black), var(--primary-black));
-            border-radius: 8px;
+            height: 450px;
+            background: linear-gradient(135deg, var(--blush-pink), var(--light-pink));
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
-            color: var(--gold);
+            font-size: 6rem;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInRight 1s ease;
+            box-shadow: 0 20px 50px rgba(255, 107, 157, 0.15);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 4s infinite;
         }
 
         @media (max-width: 768px) {
             .about {
-                padding: 4rem 1.5rem;
+                padding: 5rem 1.5rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.5rem;
             }
 
             .about-text h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .about-image {
-                height: 250px;
-                font-size: 3rem;
+                height: 300px;
+                font-size: 4rem;
             }
         }
 
         /* ===== TRUST SECTION ===== */
         .trust {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
-            color: var(--white);
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--blush-pink) 0%, var(--light-pink) 100%);
+            color: var(--text-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .trust-container {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .trust .section-title {
-            color: var(--white);
+            color: var(--text-dark);
         }
 
         .trust-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
             margin-top: 4rem;
         }
 
         .trust-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 107, 157, 0.2);
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            animation: slideUp 0.8s ease both;
+            backdrop-filter: blur(10px);
         }
 
+        .trust-card:nth-child(1) { animation-delay: 0.1s; }
+        .trust-card:nth-child(2) { animation-delay: 0.2s; }
+        .trust-card:nth-child(3) { animation-delay: 0.3s; }
+        .trust-card:nth-child(4) { animation-delay: 0.4s; }
+        .trust-card:nth-child(5) { animation-delay: 0.5s; }
+        .trust-card:nth-child(6) { animation-delay: 0.6s; }
+
         .trust-card:hover {
-            background: rgba(212, 175, 55, 0.1);
-            border-color: var(--gold);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 25px 50px rgba(255, 107, 157, 0.2);
+            border-color: var(--primary-pink);
         }
 
         .trust-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            color: var(--gold);
         }
 
         .trust-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--light-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-pink);
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .trust-card p {
-            font-size: 0.95rem;
-            color: #ccc;
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
         @media (max-width: 768px) {
             .trust {
-                padding: 4rem 1.5rem;
+                padding: 5rem 1.5rem;
             }
 
             .trust-grid {
@@ -551,69 +757,89 @@
 
         /* ===== TESTIMONIALS ===== */
         .testimonials {
-            padding: 6rem 2rem;
-            background: var(--light-gray);
+            padding: 8rem 2rem;
+            background: var(--cream);
+            position: relative;
         }
 
         .testimonials-container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
             margin-top: 4rem;
         }
 
         .testimonial-card {
             background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
             position: relative;
-            animation: slideUp 0.6s ease;
+            animation: slideUp 0.8s ease both;
+            border: 1px solid rgba(255, 107, 157, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+        .testimonial-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(255, 107, 157, 0.15);
         }
 
         .testimonial-card::before {
             content: '"';
             position: absolute;
-            top: 10px;
-            left: 15px;
-            font-size: 3rem;
-            color: var(--gold);
-            opacity: 0.3;
+            top: 15px;
+            left: 20px;
+            font-size: 3.5rem;
+            color: var(--light-pink);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
         }
 
         .stars {
-            color: var(--gold);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            color: var(--primary-pink);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
         }
 
         .testimonial-text {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #555;
-            margin-bottom: 1rem;
-            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
             font-style: italic;
+            font-weight: 300;
         }
 
         .testimonial-author {
-            font-weight: 600;
-            color: var(--primary-black);
-            font-size: 0.95rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
         }
 
         .testimonial-role {
-            font-size: 0.85rem;
-            color: #888;
+            font-size: 0.9rem;
+            color: var(--primary-pink);
+            margin-top: 0.3rem;
+            font-weight: 500;
         }
 
         @media (max-width: 768px) {
             .testimonials {
-                padding: 4rem 1.5rem;
+                padding: 5rem 1.5rem;
             }
 
             .testimonial-grid {
@@ -623,126 +849,181 @@
 
         /* ===== CTA SECTION ===== */
         .cta-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, var(--gold), var(--light-gold));
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
             text-align: center;
-            color: var(--primary-black);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
         }
 
         .cta-section h2 {
-            font-size: 2.2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            letter-spacing: 1px;
+            animation: fadeInUp 0.8s ease;
         }
 
         .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
             opacity: 0.95;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease 0.1s both;
         }
 
         .cta-section .btn-primary {
-            background: var(--primary-black);
-            color: var(--gold);
+            background: var(--white);
+            color: var(--primary-pink);
+            animation: fadeInUp 0.8s ease 0.2s both;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
 
         .cta-section .btn-primary:hover {
-            background: var(--secondary-black);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            background: var(--cream);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
         @media (max-width: 768px) {
             .cta-section {
-                padding: 3rem 1.5rem;
+                padding: 4rem 1.5rem;
             }
 
             .cta-section h2 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             .cta-section p {
-                font-size: 0.95rem;
+                font-size: 1.1rem;
             }
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--primary-black);
+            background: var(--black);
             color: var(--white);
-            padding: 3rem 2rem 1.5rem;
-            text-align: center;
+            padding: 4rem 2rem 1.5rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-pink), transparent);
         }
 
         .footer-content {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .footer-section h4 {
-            color: var(--gold);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            color: var(--primary-pink);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .footer-section p, .footer-section a {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #ccc;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         .footer-section a {
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .footer-section a:hover {
-            color: var(--gold);
+            color: var(--primary-pink);
         }
 
         .social-links {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 1.5rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .social-links a {
             display: inline-flex;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             align-items: center;
             justify-content: center;
-            background: var(--secondary-black);
+            background: rgba(255, 107, 157, 0.15);
             border-radius: 50%;
-            color: var(--gold);
-            transition: all 0.3s ease;
+            color: var(--primary-pink);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: 1.2rem;
         }
 
         .social-links a:hover {
-            background: var(--gold);
-            color: var(--primary-black);
-            transform: translateY(-3px);
+            background: var(--primary-pink);
+            color: var(--white);
+            transform: translateY(-5px);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            padding-top: 1.5rem;
-            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 107, 157, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
             color: #999;
         }
 
         @media (max-width: 768px) {
             footer {
-                padding: 2rem 1.5rem 1rem;
+                padding: 2.5rem 1.5rem 1rem;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
+            }
+
+            .social-links {
+                justify-content: center;
             }
         }
 
@@ -751,37 +1032,54 @@
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: var(--gold);
-            color: var(--primary-black);
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+            color: var(--white);
             border: none;
             border-radius: 50%;
             cursor: pointer;
             display: none;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
+            font-size: 1.4rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             z-index: 999;
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.3);
         }
 
         .scroll-top.show {
             display: flex;
+            animation: slideUp 0.4s ease;
         }
 
         .scroll-top:hover {
-            background: var(--light-gold);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(255, 107, 157, 0.4);
         }
 
         @media (max-width: 768px) {
             .scroll-top {
-                bottom: 1rem;
-                right: 1rem;
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        @media (max-width: 600px) {
+            html {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -790,58 +1088,58 @@
 
     <!-- NAVIGATION -->
     <nav>
-        <div class="logo">✨ TINESTRAND</div>
+        <div class="logo">Tinestrand</div>
         <ul class="nav-links">
             <li><a href="#products">Products</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#testimonials">Reviews</a></li>
         </ul>
-        <a href="https://wa.me/2349012345678?text=Hi!%20I'm%20interested%20in%20Tinestrand%20Hair%20products%20😍" class="whatsapp-btn-nav">Order Now</a>
+        <a href="https://wa.me/14165551234?text=Hi!%20I'm%20interested%20in%20Tinestrand%20Hair%20products%20✨" class="whatsapp-btn-nav">Order Now</a>
     </nav>
 
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
-            <h1>TINESTRAND HAIR</h1>
-            <p class="tagline">Premium Hair Extensions × Luxury Affordability</p>
+            <h1>Tinestrand</h1>
+            <p class="tagline">Premium Hair × Timeless Beauty</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/2349012345678?text=Hi!%20I'm%20interested%20in%20Tinestrand%20Hair%20products%20😍" class="btn-primary">💬 Order on WhatsApp</a>
-                <a href="#products" class="btn-secondary">View Products</a>
+                <a href="https://wa.me/14165551234?text=Hi!%20I'm%20interested%20in%20Tinestrand%20Hair%20products%20✨" class="btn-primary">💬 Order on WhatsApp</a>
+                <a href="#products" class="btn-secondary">Explore Collection</a>
             </div>
         </div>
     </section>
 
     <!-- PRODUCT SHOWCASE -->
     <section class="products" id="products">
-        <div class="section-title">Our Collections</div>
+        <h2 class="section-title">Our Collections</h2>
         <div class="product-grid">
             <div class="product-card">
                 <div class="product-image">💇‍♀️</div>
                 <div class="product-info">
-                    <div class="product-name">Bone Straight 20"</div>
-                    <div class="product-price">₦18,500 - ₦22,000</div>
-                    <p class="product-description">Silky smooth, long-lasting bone straight texture. Perfect for that polished look.</p>
-                    <a href="https://wa.me/2349012345678?text=Hi!%20I'm%20interested%20in%20Bone%20Straight%2020%22%20hair%20from%20Tinestrand%20😍" class="btn-primary">Order Now</a>
+                    <div class="product-name">Bone Straight</div>
+                    <div class="product-price">CA$165 - CA$210</div>
+                    <p class="product-description">Silky smooth, long-lasting texture. Perfect for that polished, sleek look.</p>
+                    <a href="https://wa.me/14165551234?text=Hi!%20I'm%20interested%20in%20Bone%20Straight%20hair%20from%20Tinestrand%20✨" class="btn-primary">Order Now</a>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="product-image">🌊</div>
                 <div class="product-info">
-                    <div class="product-name">Body Wave 18"</div>
-                    <div class="product-price">₦16,500 - ₦20,000</div>
-                    <p class="product-description">Natural, bouncy body wave texture. Stunning volume and movement.</p>
-                    <a href="https://wa.me/2349012345678?text=Hi!%20I'm%20interested%20in%20Body%20Wave%2018%22%20hair%20from%20Tinestrand%20😍" class="btn-primary">Order Now</a>
+                    <div class="product-name">Body Wave</div>
+                    <div class="product-price">CA$155 - CA$195</div>
+                    <p class="product-description">Natural bouncy texture. Stunning volume and effortless movement.</p>
+                    <a href="https://wa.me/14165551234?text=Hi!%20I'm%20interested%20in%20Body%20Wave%20hair%20from%20Tinestrand%20✨" class="btn-primary">Order Now</a>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="product-image">👑</div>
                 <div class="product-info">
-                    <div class="product-name">Loose Wave 22"</div>
-                    <div class="product-price">₦20,000 - ₦25,000</div>
-                    <p class="product-description">Glamorous loose wave bundles. Extra length, extra elegance.</p>
-                    <a href="https://wa.me/2349012345678?text=Hi!%20I'm%20interested%20in%20Loose%20Wave%2022%22%20hair%20from%20Tinestrand%20😍" class="btn-primary">Order Now</a>
+                    <div class="product-name">Loose Wave</div>
+                    <div class="product-price">CA$175 - CA$230</div>
+                    <p class="product-description">Glamorous loose wave bundles. Extra length, extra elegance, extra confidence.</p>
+                    <a href="https://wa.me/14165551234?text=Hi!%20I'm%20interested%20in%20Loose%20Wave%20hair%20from%20Tinestrand%20✨" class="btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -849,19 +1147,19 @@
                 <div class="product-image">✨</div>
                 <div class="product-info">
                     <div class="product-name">Curly Bundle Wig</div>
-                    <div class="product-price">₦14,000 - ₦18,000</div>
-                    <p class="product-description">Pre-made curly wig. Ready to wear, no installation needed.</p>
-                    <a href="https://wa.me/2349012345678?text=Hi!%20I'm%20interested%20in%20Curly%20Bundle%20Wig%20from%20Tinestrand%20😍" class="btn-primary">Order Now</a>
+                    <div class="product-price">CA$140 - CA$180</div>
+                    <p class="product-description">Pre-made curly wig. Ready to wear, zero installation stress.</p>
+                    <a href="https://wa.me/14165551234?text=Hi!%20I'm%20interested%20in%20Curly%20Bundle%20Wig%20from%20Tinestrand%20✨" class="btn-primary">Order Now</a>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="product-image">🎀</div>
                 <div class="product-info">
-                    <div class="product-name">Deep Wave 16"</div>
-                    <div class="product-price">₦15,500 - ₦19,500</div>
-                    <p class="product-description">Textured deep wave for that defined, sophisticated look.</p>
-                    <a href="https://wa.me/2349012345678?text=Hi!%20I'm%20interested%20in%20Deep%20Wave%2016%22%20hair%20from%20Tinestrand%20😍" class="btn-primary">Order Now</a>
+                    <div class="product-name">Deep Wave</div>
+                    <div class="product-price">CA$150 - CA$190</div>
+                    <p class="product-description">Textured deep wave for that defined, sophisticated elegance.</p>
+                    <a href="https://wa.me/14165551234?text=Hi!%20I'm%20interested%20in%20Deep%20Wave%20hair%20from%20Tinestrand%20✨" class="btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -869,9 +1167,9 @@
                 <div class="product-image">💎</div>
                 <div class="product-info">
                     <div class="product-name">HD Lace Frontal</div>
-                    <div class="product-price">₦12,000 - ₦16,000</div>
-                    <p class="product-description">Invisible hairline, undetectable finish. Premium quality lace.</p>
-                    <a href="https://wa.me/2349012345678?text=Hi!%20I'm%20interested%20in%20HD%20Lace%20Frontal%20from%20Tinestrand%20😍" class="btn-primary">Order Now</a>
+                    <div class="product-price">CA$120 - CA$160</div>
+                    <p class="product-description">Invisible hairline, undetectable finish. Premium HD lace.</p>
+                    <a href="https://wa.me/14165551234?text=Hi!%20I'm%20interested%20in%20HD%20Lace%20Frontal%20from%20Tinestrand%20✨" class="btn-primary">Order Now</a>
                 </div>
             </div>
         </div>
@@ -879,28 +1177,28 @@
 
     <!-- ABOUT SECTION -->
     <section class="about" id="about">
-        <div class="section-title">About Tinestrand</div>
+        <h2 class="section-title">About Tinestrand</h2>
         <div class="about-content">
             <div class="about-text">
-                <h2>Premium Hair, Real Quality</h2>
-                <p>At Tinestrand Hair, we believe that every woman deserves premium quality hair at affordable prices. We're committed to bringing luxury right to your doorstep across Lagos and Nigeria.</p>
-                <p>Our hair is carefully sourced, quality-tested, and delivered with excellence. We don't just sell hair—we deliver confidence, style, and transformation.</p>
+                <h2>Premium Hair, Real Beauty</h2>
+                <p>At Tinestrand, we believe every woman deserves premium quality hair at fair prices. Handpicked, quality-tested, and shipped with care across Canada.</p>
+                <p>We don't just sell hair—we deliver confidence, transformation, and that unforgettable feeling when you look in the mirror and love what you see.</p>
                 <div class="about-highlights">
                     <div class="highlight">
                         <div class="highlight-icon">✓</div>
-                        <div class="highlight-text"><strong>100% Human Hair</strong> - Authentic, long-lasting quality</div>
+                        <div class="highlight-text"><strong>100% Human Hair</strong> – Authentic, long-lasting quality that feels real.</div>
                     </div>
                     <div class="highlight">
                         <div class="highlight-icon">✓</div>
-                        <div class="highlight-text"><strong>24-48hrs Delivery</strong> - Fast shipping across Lagos</div>
+                        <div class="highlight-text"><strong>Fast Shipping</strong> – Order today, shipped within 24 hours across Canada.</div>
                     </div>
                     <div class="highlight">
                         <div class="highlight-icon">✓</div>
-                        <div class="highlight-text"><strong>Customer Focused</strong> - Responsive support on WhatsApp</div>
+                        <div class="highlight-text"><strong>Expert Support</strong> – Responsive WhatsApp guidance from real people.</div>
                     </div>
                     <div class="highlight">
                         <div class="highlight-icon">✓</div>
-                        <div class="highlight-text"><strong>Competitive Prices</strong> - Luxury that doesn't break the bank</div>
+                        <div class="highlight-text"><strong>Fair Pricing</strong> – Luxury quality without the luxury price tag.</div>
                     </div>
                 </div>
             </div>
@@ -911,37 +1209,37 @@
     <!-- TRUST SECTION -->
     <section class="trust">
         <div class="trust-container">
-            <div class="section-title">Why Choose Tinestrand?</div>
+            <h2 class="section-title">Why Tinestrand?</h2>
             <div class="trust-grid">
                 <div class="trust-card">
                     <div class="trust-icon">🚚</div>
-                    <h3>Fast Delivery</h3>
-                    <p>Order today, receive within 24-48 hours across Lagos. Nationwide shipping available.</p>
+                    <h3>Fast Shipping</h3>
+                    <p>Order today, shipped within 24 hours. Canada-wide delivery. Tracking included on every order.</p>
                 </div>
                 <div class="trust-card">
                     <div class="trust-icon">⭐</div>
-                    <h3>Quality Assurance</h3>
-                    <p>Every bundle inspected for quality. Premium human hair that lasts months with proper care.</p>
+                    <h3>Quality Assured</h3>
+                    <p>Every bundle inspected. Premium human hair that lasts months with proper care.</p>
                 </div>
                 <div class="trust-card">
                     <div class="trust-icon">💬</div>
-                    <h3>Direct Support</h3>
-                    <p>Chat directly on WhatsApp. Questions? We answer instantly. No waiting, no bots.</p>
+                    <h3>Direct Chat Support</h3>
+                    <p>Chat with us on WhatsApp. Real answers, real fast. No bots, no waiting.</p>
                 </div>
                 <div class="trust-card">
                     <div class="trust-icon">💰</div>
-                    <h3>Affordable Luxury</h3>
-                    <p>Premium quality at prices that make sense. No hidden charges. Transparent pricing always.</p>
+                    <h3>Transparent Pricing</h3>
+                    <p>What you see is what you pay. No hidden fees. Premium quality, fair prices.</p>
                 </div>
                 <div class="trust-card">
                     <div class="trust-icon">🎁</div>
                     <h3>Bulk Discounts</h3>
-                    <p>Order 3+ bundles and get special discounts. Perfect for hair stylists and resellers.</p>
+                    <p>Order 3+ bundles and save big. Perfect for stylists and resellers.</p>
                 </div>
                 <div class="trust-card">
                     <div class="trust-icon">✨</div>
-                    <h3>Expert Advice</h3>
-                    <p>Not sure which texture? Chat with us. Our team helps you pick the perfect match.</p>
+                    <h3>Style Consultation</h3>
+                    <p>Not sure which texture? Chat with us. We help you pick the perfect match.</p>
                 </div>
             </div>
         </div>
@@ -950,34 +1248,34 @@
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
         <div class="testimonials-container">
-            <div class="section-title">What Our Customers Say</div>
+            <h2 class="section-title">Loved by Our Customers</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"The quality is insane! I was shocked when I opened the package. It's exactly like on Instagram, no surprises. Already ordered twice!"</p>
-                    <div class="testimonial-author">— Amara M.</div>
-                    <div class="testimonial-role">Verified Customer</div>
+                    <p class="testimonial-text">"Absolutely obsessed! The quality exceeded my expectations. It looks and feels like my own hair. Already ordered again!"</p>
+                    <div class="testimonial-author">— Sarah M.</div>
+                    <div class="testimonial-role">Verified Buyer</div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Super fast delivery! Ordered on a Tuesday, received Wednesday morning. The hair is so beautiful and it arrived in perfect condition."</p>
-                    <div class="testimonial-author">— Chioma L.</div>
-                    <div class="testimonial-role">Verified Customer</div>
+                    <p class="testimonial-text">"Shipped so fast! Received in 2 days. The packaging was beautiful and the hair arrived in perfect condition. This is the one!"</p>
+                    <div class="testimonial-author">— Jessica H.</div>
+                    <div class="testimonial-role">Verified Buyer</div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Best decision ever! The bone straight is everything. My stylist was shocked at the quality. Definitely buying more bundles soon!"</p>
-                    <div class="testimonial-author">— Zainab K.</div>
-                    <div class="testimonial-role">Verified Customer</div>
+                    <p class="testimonial-text">"My stylist couldn't believe the quality. The bone straight is absolutely gorgeous. Best hair investment I've made!"</p>
+                    <div class="testimonial-author">— Amara K.</div>
+                    <div class="testimonial-role">Verified Buyer</div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Customer service on point! Had a small issue, they responded in 5 minutes and sorted me out. That's the kind of business I support!"</p>
+                    <p class="testimonial-text">"Their customer service is incredible. Had a question at 10pm, got a response in minutes. That's the kind of business I support!"</p>
                     <div class="testimonial-author">— Tanya O.</div>
-                    <div class="testimonial-role">Verified Customer</div>
+                    <div class="testimonial-role">Verified Buyer</div>
                 </div>
             </div>
         </div>
@@ -985,9 +1283,11 @@
 
     <!-- CTA SECTION -->
     <section class="cta-section">
-        <h2>Ready to Transform Your Look?</h2>
-        <p>Chat with us now on WhatsApp to place your order. Free style consultation included!</p>
-        <a href="https://wa.me/2349012345678?text=Hi!%20I%20want%20to%20order%20from%20Tinestrand%20Hair.%20Help%20me%20pick%20the%20best%20option%20😍" class="btn-primary">Start Shopping Now</a>
+        <div class="cta-content">
+            <h2>Ready to Transform?</h2>
+            <p>Chat with us on WhatsApp. Free style consultation included.</p>
+            <a href="https://wa.me/14165551234?text=Hi!%20I%20want%20to%20order%20from%20Tinestrand%20Hair.%20Help%20me%20pick%20the%20perfect%20hair%20✨" class="btn-primary">Start Shopping Now</a>
+        </div>
     </section>
 
     <!-- FOOTER -->
@@ -995,10 +1295,10 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Tinestrand Hair</h4>
-                <p>Premium hair extensions and wigs delivered fast across Lagos & Nigeria.</p>
+                <p>Premium hair extensions and wigs delivered fast across Canada.</p>
                 <div class="social-links">
-                    <a href="https://instagram.com/tinestrand_hair" target="_blank">📸</a>
-                    <a href="https://wa.me/2349012345678" target="_blank">💬</a>
+                    <a href="https://instagram.com/tinestrand_hair" target="_blank" title="Instagram">📸</a>
+                    <a href="https://wa.me/14165551234" target="_blank" title="WhatsApp">💬</a>
                 </div>
             </div>
             <div class="footer-section">
@@ -1006,17 +1306,17 @@
                 <a href="#products">Our Products</a><br>
                 <a href="#about">About Us</a><br>
                 <a href="#testimonials">Reviews</a><br>
-                <a href="https://wa.me/2349012345678">Contact</a>
+                <a href="https://wa.me/14165551234">Contact</a>
             </div>
             <div class="footer-section">
                 <h4>Get In Touch</h4>
-                <p>📍 Lagos, Nigeria</p>
-                <p>💬 <a href="https://wa.me/2349012345678">Chat on WhatsApp</a></p>
+                <p>📍 Canada-Wide Shipping</p>
+                <p>💬 <a href="https://wa.me/14165551234">Chat on WhatsApp</a></p>
                 <p>📸 <a href="https://instagram.com/tinestrand_hair">@tinestrand_hair</a></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Tinestrand Hair. All rights reserved. Built for style, delivered with excellence.</p>
+            <p>&copy; 2024 Tinestrand Hair. Premium quality, delivered with elegance.</p>
         </div>
     </footer>
 
@@ -1024,7 +1324,7 @@
     <button class="scroll-top" id="scrollTop">↑</button>
 
     <script>
-        // Scroll to top button functionality
+        // Scroll to top button
         const scrollTopBtn = document.getElementById('scrollTop');
         
         window.addEventListener('scroll', () => {
@@ -1039,14 +1339,16 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Smooth scroll for navigation links
+        // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href !== '#' && document.querySelector(href)) {
                     e.preventDefault();
-                    const element = document.querySelector(href);
-                    element.scrollIntoView({ behavior: 'smooth' });
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
